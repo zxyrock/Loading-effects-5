@@ -1,0 +1,62 @@
+*{
+  margin: 0;
+  padding:0;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d3436;
+
+  .loader{
+    width: 48px;
+    height: 48px;
+    position: relative;
+    // background-color: red;
+    animation: rotation 1.5s linear infinite;
+
+    &::after,&::before{
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: rgb(68, 18, 207);
+      border-radius: 50%;
+    }
+
+    &::after{
+      top: 0;
+      background-color: #15bae7;
+      animation: scale 1s infinite ease-in-out alternate;
+    }
+
+    &::before{
+      bottom: 0;
+      background-color:  #e4118c;
+      animation: scale 1s 0.5s infinite ease-in-out alternate;
+    }
+
+    @keyframes scale {
+      0%{
+        transform: scale(1);
+      }
+      100%{
+        transform: scale(0);
+      }
+      
+    }
+  }
+
+  @keyframes rotation {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+    
+  }
+}
